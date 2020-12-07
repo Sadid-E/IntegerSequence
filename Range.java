@@ -12,7 +12,10 @@ public class Range implements IntegerSequence{
   }
 
   public void reset(){  }
-  public int length(){  }
+
+  public int length(){
+    return end - start + 1;
+  }
 
   //When current is no longer a valid element in the range, it should return false.
   public boolean hasNext(){
@@ -28,7 +31,7 @@ public class Range implements IntegerSequence{
                                        "there are no more elements in the range");
     }
     return current;
-    curent++;
+    current++;
   }
 
 }
