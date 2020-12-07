@@ -32,8 +32,8 @@ public class Range implements IntegerSequence{
       throw new NoSuchElementException("Current is" + current +
                                        "there are no more elements in the range");
     }
-    return current;
     current++;
+    return current-1;
   }
 
 }
