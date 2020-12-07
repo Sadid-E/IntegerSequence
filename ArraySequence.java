@@ -2,8 +2,8 @@ import java.util.NoSuchElementException;
 
 public class ArraySequence implements IntegerSequence{
 
-  int currentIndex;
-  int[] data;
+  private int currentIndex;
+  private int[] data;
 
   /*Construct the sequence by copying values from the other array into the data array*/
   public ArraySequence(int[] other){
@@ -11,6 +11,14 @@ public class ArraySequence implements IntegerSequence{
     data = new int[other.length];
     for (int i = 0; i < other.length; i++) {
       data[i] = other[i];
+    }
+  }
+
+  public ArraySequence(IntegerSequence other){
+    other.reset();
+    data = new int[other.length()];
+    for (int i = 0; i < other.length(); i++) {
+      data[i] = other.next();
     }
   }
 
