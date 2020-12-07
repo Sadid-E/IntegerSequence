@@ -8,7 +8,7 @@ public class ArraySequence implements IntegerSequence{
   /*Construct the sequence by copying values from the other array into the data array*/
   public ArraySequence(int[] other){
     currentIndex = 0;
-    int[] data = new int[other.length];
+    data = new int[other.length];
     for (int i = 0; i < other.length; i++) {
       data[i] = other[i];
     }
@@ -19,7 +19,7 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public int length(){
-    return 0;
+    return data.length;
   }
 
   public boolean hasNext(){
