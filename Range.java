@@ -6,6 +6,10 @@ public class Range implements IntegerSequence{
   //@param start : the starting value (inclusive) which must be <= end.
   //@param end : the ending value which is also inclusive.
   public Range(int start,  int end){
+    if (start > end) {
+      throw new IllegalArgumentException("Start is" + start + " end is " + end +
+                                         " start must be less than or equal to end");
+    }
     this.start = start;
     this.end = end;
     current = start;
@@ -29,8 +33,8 @@ public class Range implements IntegerSequence{
   //e.g.  if current is 5. This will make current 6, and return 5.
   public int next(){
     if (!hasNext()) {
-      throw new NoSuchElementException("Current is" + current +
-                                       "there are no more elements in the range");
+      throw new NoSuchElementException("Current is " + current +
+                                       " there are no more elements in the range");
     }
     current++;
     return current-1;
