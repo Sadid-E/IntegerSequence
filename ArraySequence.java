@@ -27,7 +27,12 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public int next(){
-    return 0;
+    if (!hasNext()) {
+      throw new NoSuchElementException("Current is " + currentIndex +
+                                       " there are no more elements in the range");
+    }
+    currentIndex++;
+    return data[currentIndex-1];
   }
 
 }
